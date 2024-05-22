@@ -1,0 +1,84 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'consolas';
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+input {
+  width: 500px;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'consolas';
+  outline: none;
+
+}
+
+button {
+  width: fit-content;
+  height: 60px;
+  padding: 10px;
+  background-color: rgb(111, 66, 216);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'consolas';
+  cursor: pointer;
+}
+
+.validation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding-top: 10px;
+}
+
+.status-bar {
+  width: fill;
+  height: 80px;
+
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: rgb(255, 226, 148);
+  border: 1px solid rgb(209, 184, 114);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.status-bar.open {
+  background-color: rgb(155, 247, 155);
+  border-color: green;
+}
+
+.status-bar.closed {
+  background-color: rgb(206, 155, 247);
+  border-color: rgb(87, 0, 128);
+}
