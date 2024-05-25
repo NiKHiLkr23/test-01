@@ -19,17 +19,25 @@ export default function Home() {
     return params;
   };
 
+  const validateURL = () => {
+    const scheme_1 = "https://";
+    const scheme_2 = "www.";
+    const domain = "github.com";
+
+    const split = link.split(
+      new RegExp(`${scheme_1}|${scheme_2}|${domain}`, "g")
+    );
+    console.log(split);
+  };
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_ACCESS_TOKEN,
+  });
   const run = async () => {
     const params = filterParams();
     try {
-      console.log("initializing octokit...");
-      const octokit = new Octokit({
-        auth: "GITHUB_ACCESS_TOKEN",//here goes your personal github access token
-      });
-      console.log("validating input...");
-
+      //validate filterParams()-response
       if (params[1] && params[2] && params[4]) {
-        console.log("sending request...");
+        //sending request
         const response = await octokit.request(
           "GET /repos/{owner}/{repo}/pulls/{pull_number}",
           {
@@ -46,9 +54,14 @@ export default function Home() {
         setPullStatus(JSON.parse(JSON.stringify(response))["data"]["state"]);
         setRequestStatus(JSON.parse(JSON.stringify(response))["status"]);
       } else {
-        console.log("Missing parameters...");
+        console.log("Missing parameters.");
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log("------------------------------");
+      console.log("Error log:");
+      console.log(e);
+      console.log("------------------------------");
+    }
   };
   return (
     <main>
@@ -60,7 +73,7 @@ export default function Home() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
-          <button onClick={run}>submit</button>
+          <button onClick={validateURL}>submit</button>
         </div>
         <div className="validation">
           {requestStatus != 200 && requestStatus && (
