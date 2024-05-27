@@ -1,0 +1,243 @@
+.section {
+    width: 100%;
+    height: 100vh;
+}
+
+.paragraph {
+    width: 50vw;
+    padding: 160px;
+
+    box-sizing: border-box;
+}
+
+.font-h1 {
+    font-family: "satoshi-bold";
+    font-size: 52px;
+    letter-spacing: -0.2rem;
+}
+
+.font-h2 {
+    font-family: "satoshi-bold";
+    font-size: 40px;
+    letter-spacing: -0.1rem;
+}
+
+.font-h3 {
+    font-family: "satoshi-bold";
+    font-size: 28px;
+    letter-spacing: -0.1rem;
+}
+
+.font-h4 {
+    font-family: "satoshi-bold";
+    font-size: 22px;
+    letter-spacing: -0.1rem;
+
+}
+
+.font-text {
+    font-family: "satoshi-regular";
+    font-size: 18px;
+
+}
+
+.font-text-bold {
+    font-family: "satoshi-bold";
+    font-size: 18px;
+}
+
+.font-text-light {
+    font-family: "satoshi-regular";
+    font-size: 18px;
+}
+
+.font-text-small {
+    font-family: "satoshi-regular";
+    font-size: 16px;
+}
+
+.font-text-small-bold {
+    font-family: "satoshi-bold";
+    font-size: 16px;
+}
+
+.font-text-small-light {
+    font-family: "satoshi-regular";
+    font-size: 16px;
+}
+
+.font-text-tiny {
+    font-family: "satoshi-regular";
+    font-size: 14px;
+}
+
+.font-text-tiny-bold {
+    font-family: "satoshi-bold";
+    font-size: 14px;
+}
+
+
+
+.font-text-tiny-light {
+    font-family: "satoshi-regular";
+    font-size: 14px;
+}
+
+
+/* a set of classes for display:flex variations, like this: .flex-(row / column)-(justify-content)-(align-items)*/
+/*row-start**/
+.flex-row-start-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-row-start-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-row-start-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+/*row-center**/
+.flex-row-center-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-row-center-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-between-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row-center-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/*row-end**/
+.flex-row-end-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.flex-row-end-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-row-end-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.flex-row-between-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-row-between-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row-between-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.flex-column-center-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column-center-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-column-center-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.flex-column-start-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-column-start-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-column-start-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.flex-column-end-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-column-end-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.flex-column-end-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
