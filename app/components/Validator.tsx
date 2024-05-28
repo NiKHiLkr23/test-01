@@ -27,7 +27,7 @@ export default function Validator({
         >
           {pullStatus == "open"
             ? "Pull request is open."
-            : "Pull request is open."}
+            : "Pull request is closed."}
         </motion.div>
       );
     case 400:
