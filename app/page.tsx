@@ -22,6 +22,7 @@ export default function Home() {
     return values;
   };
   const run = async () => {
+    console.log("executing function...");
     try {
       //check if link is a github pull-request
       if (link.includes("github.com") && link.includes("pull")) {
@@ -30,37 +31,49 @@ export default function Home() {
         //confirm that parameters are existing
         if (params[1] && params[2] && params[4]) {
           //send request
-          const response = await octokit
-            .request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
-              owner: params[1],
-              repo: params[2],
-              pull_number: Number(params[4]),
-              headers: {
-                "X-GitHub-Api-Version": "2022-11-28",
-              },
-            })
-            .catch((error) => {
-              if (error.response) {
-                // The request was made and the server responded with a status code
-                console.log("HTTP Status Code:", error.response.status);
-                setRequestStatus(error.response.status);
-              } else if (error.request) {
-                // The request was made but no response was received
-                console.log("No response received");
-                setRequestStatus(500);
-              } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log("Error", error.message);
-                setRequestStatus(500);
-              }
-            });
-          setPullStatus(JSON.parse(JSON.stringify(response))["data"]["state"]);
-          setRequestStatus(JSON.parse(JSON.stringify(response))["status"]);
+          const permalink = link;
+          setInterval(async () => {
+            console.log("-------------------------------");
+            console.log("in the interval-loop...");
+            console.log("URL: " + permalink);
+            const response = await octokit
+              .request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
+                owner: params[1],
+                repo: params[2],
+                pull_number: Number(params[4]),
+                headers: {
+                  "X-GitHub-Api-Version": "2022-11-28",
+                },
+              })
+              .catch((error) => {
+                if (error.response) {
+                  // The request was made and the server responded with a status code
+                  setRequestStatus(error.response.status);
+                } else if (error.request) {
+                  // The request was made but no response was received
+                  setRequestStatus(500);
+                } else {
+                  // Something happened in setting up the request that triggered an Error
+                  setRequestStatus(500);
+                }
+              });
+            console.log(
+              "Pull request status: " +
+                JSON.parse(JSON.stringify(response))["data"]["state"]
+            );
+            console.log(
+              "HTTP status: " + JSON.parse(JSON.stringify(response))["status"]
+            );
+            setPullStatus(
+              JSON.parse(JSON.stringify(response))["data"]["state"]
+            );
+            setRequestStatus(JSON.parse(JSON.stringify(response))["status"]);
+          }, 10000);
         } else {
-          setRequestStatus(400);
+          setRequestStatus(0);
         }
       } else {
-        setRequestStatus(400);
+        setRequestStatus(0);
       }
     } catch (e) {
       console.log("Unexpected Error.");
@@ -70,10 +83,8 @@ export default function Home() {
 
   useEffect(() => {
     // Set up the interval to send the request every minute
-    const intervalId = setInterval(run, 60000);
     // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, [active]);
+  }, []);
   return (
     <main>
       <Loader />
@@ -85,13 +96,13 @@ export default function Home() {
             type="text"
             value={link}
             onChange={(e) => {
-              setRequestStatus(0);
               setLink(e.target.value);
+              setRequestStatus(0);
+              setRequestStatus(0);
             }}
           />
           <button
             onClick={async () => {
-              setActive(true);
               await run();
             }}
             className="submit font-text-small-bold"
