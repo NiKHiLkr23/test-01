@@ -1,0 +1,51 @@
+.container {
+  background-color: rgb(244, 244, 244);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  padding: 10px;
+  gap: 5px;
+}
+
+.input-row {
+  gap: 5px;
+}
+
+.submit {
+  width: fit-content;
+  height: 60px;
+  padding: 10px;
+  background-color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.validation-container {
+  width: fill;
+}
+
+.status-bar {
+  width: fill;
+
+  padding: 10px;
+
+  background-color: rgb(255, 226, 148);
+  border: 1px solid rgb(209, 184, 114);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.status-bar.success {
+  background-color: rgb(155, 247, 155);
+  border-color: green;
+}
+
+.status-bar.error {
+  background-color: rgb(247, 155, 155);
+  border-color: rgb(128, 0, 0);
+}

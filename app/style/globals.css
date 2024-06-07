@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "satoshi-regular";
+  src: url(./fonts/Satoshi-Regular.otf);
+}
+
+@font-face {
+  font-family: "satoshi-bold";
+  src: url(./fonts/Satoshi-Black.otf);
+}
+
+:root {
+  max-width: 100vw;
+
+  --black: rgb(0, 0, 0);
+  --white: #FFFFFF;
+  --accent: #8539ff;
+
+  background-color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'consolas';
+}
+
+input {
+  width: 500px;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent);
+}
